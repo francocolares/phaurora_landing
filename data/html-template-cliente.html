@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PH Balcony – Apartamentos Hato Pintado | Entrega Inmediata</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #3da068;
+    --green-pale: #e8f5ee;
+    --green-accent: #5cc88a;
+    --cream: #faf8f3;
+    --text-dark: #1a1a1a;
+    --text-muted: #6b7280;
+    --white: #ffffff;
+    --border: #e5e7eb;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0d2b1a 0%, #1a4a2e 40%, #2d7a4f 100%);
+    color: white;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(92,200,138,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(61,160,104,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-left {
+    padding: 3.5rem 3rem 3.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(92,200,138,0.15);
+    border: 1px solid rgba(92,200,138,0.35);
+    color: var(--green-accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--green-accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:.5; transform:scale(1.3); }
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+  .hero-title span { color: var(--green-accent); }
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 2rem;
+    max-width: 420px;
+    line-height: 1.75;
+  }
+  .trust-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .trust-item { display: flex; flex-direction: column; }
+  .trust-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--green-accent);
+    line-height: 1;
+  }
+  .trust-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 3px; }
+  .amenities-mini { display: flex; gap: 8px; flex-wrap: wrap; }
+  .amenity-tag {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.13);
+    color: rgba(255,255,255,0.82);
+    font-size: 0.76rem;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  /* ── FORM PANEL ── */
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 5rem 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.4rem 2.2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+  }
+  .form-card-header { margin-bottom: 1.4rem; }
+  .form-card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+  }
+  .form-card-header p { font-size: 0.83rem; color: var(--text-muted); }
+  .urgency-bar {
+    background: #fff8e6;
+    border-left: 3px solid #f0b429;
+    padding: 9px 12px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.8rem;
+    color: #7a4f00;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+  }
+  .form-group { margin-bottom: 13px; }
+  .form-group label {
+    display: block;
+    font-size: 0.73rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    background: #f9fafb;
+    transition: border-color .2s, background .2s;
+    outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--green-light);
+    background: white;
+  }
+  .form-group input::placeholder { color: #b5bcc7; }
+  .btn-primary {
+    width: 100%;
+    background: var(--green-mid);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-primary:active { transform: scale(.98); }
+  .btn-wa {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .btn-wa:hover { background: #1da952; }
+  .form-privacy {
+    font-size: 0.71rem;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* ── SOCIAL PROOF BAR ── */
+  .proof-bar {
+    background: var(--green-dark);
+    color: white;
+    padding: 1.2rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .proof-item { display: flex; align-items: center; gap: 10px; }
+  .proof-icon { font-size: 1.25rem; opacity: .75; }
+  .proof-text strong { display: block; font-size: 0.9rem; color: var(--green-accent); }
+  .proof-text span { color: rgba(255,255,255,.58); font-size: 0.75rem; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 3.5rem 5rem; }
+  .section.bg-white { background: white; border-top: 1px solid var(--border); }
+  .section-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: .4rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: .5rem;
+  }
+  .section-sub { color: var(--text-muted); font-size: .9rem; margin-bottom: 2rem; }
+
+  /* ── TIPOLOGÍAS ── */
+  .tipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .tipo-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+  }
+  .tipo-card:hover { border-color: var(--green-light); box-shadow: 0 4px 16px rgba(45,122,79,.12); }
+  .tipo-card.active { border-color: var(--green-light); background: var(--green-pale); }
+  .tipo-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--green-dark);
+  }
+  .tipo-m2 { font-size: 1.1rem; font-weight: 600; color: var(--green-mid); margin: 3px 0; }
+  .tipo-desc { font-size: .71rem; color: var(--text-muted); }
+  .tipo-badge {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-dark);
+    font-size: .63rem;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 100px;
+    margin-top: 7px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .tipos-cta {
+    text-align: center;
+    margin-top: .5rem;
+  }
+  .tipos-cta button {
+    background: var(--green-mid);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-size: .92rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .tipos-cta button:hover { background: var(--green-dark); }
+
+  /* ── AMENIDADES ── */
+  .amenidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+  .amen-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem .8rem;
+    text-align: center;
+  }
+  .amen-icon { font-size: 1.7rem; margin-bottom: 7px; }
+  .amen-name { font-size: .77rem; font-weight: 500; color: var(--text-dark); }
+
+  /* ── LOCATION BAR ── */
+  .location-bar {
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 1.75rem 5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .location-title { font-weight: 600; font-size: .95rem; color: var(--green-dark); margin-bottom: .6rem; }
+  .location-items { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .location-item { font-size: .78rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .loc-dot { width: 6px; height: 6px; background: var(--green-light); border-radius: 50%; flex-shrink: 0; }
+
+  /* ── CTA BOTTOM ── */
+  .cta-bottom {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    color: white;
+    padding: 3.5rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta-bottom h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
+  .cta-bottom p { color: rgba(255,255,255,.7); font-size: .9rem; }
+  .btn-cta-white {
+    background: white;
+    color: var(--green-dark);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 32px;
+    font-size: .97rem;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity .2s;
+    text-decoration: none;
+  }
+  .btn-cta-white:hover { opacity: .9; }
+
+  /* ── SUCCESS STATE ── */
+  .success-msg { display: none; text-align: center; padding: 2rem 1rem; }
+  .success-msg .check { font-size: 3rem; margin-bottom: 1rem; }
+  .success-msg h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--green-dark);
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+  }
+  .success-msg p { color: var(--text-muted); font-size: .86rem; margin-bottom: 1.2rem; }
+  .wa-follow {
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 20px;
+    font-size: .86rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── CONCEPTO ── */
+  .concepto-section { background: white; border-top: 1px solid var(--border); }
+  .concepto-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .concepto-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .75rem 1rem;
+  }
+  .pillar-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .pillar-label { font-size: .78rem; font-weight: 500; color: var(--green-dark); line-height: 1.4; }
+  .concepto-quote {
+    background: var(--green-dark);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    color: white;
+  }
+  .concepto-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(255,255,255,.9);
+    border-left: 3px solid var(--green-accent);
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .concepto-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cstat { text-align: center; flex: 1; }
+  .cstat-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--green-accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .cstat-desc { font-size: .72rem; color: rgba(255,255,255,.55); line-height: 1.4; }
+  .cstat-divider { width: 1px; height: 40px; background: rgba(255,255,255,.15); flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #0d2b1a;
+    color: rgba(255,255,255,.4);
+    font-size: .73rem;
+    line-height: 1.8;
+  }
+  .footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  .footer-360 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(92,200,138,.06);
+  }
+  .footer-360-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .footer-360-title { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 3px; }
+  .footer-360-link {
+    color: var(--green-accent) !important;
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  .footer-360-link:hover { opacity: .8; }
+  .footer-proof {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .footer-bottom { text-align: center; padding: 1.2rem; }
+
+  @media (max-width: 900px) {
+    .concepto-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-360 { padding: 1.2rem 1.5rem; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 2.5rem 1.5rem 1.5rem; }
+    .hero-right { padding: 0 1.5rem 2.5rem; }
+    .form-card { max-width: 100%; }
+    .proof-bar { padding: 1.2rem 1.5rem; }
+    .section { padding: 2.5rem 1.5rem; }
+    .cta-bottom { padding: 2.5rem 1.5rem; flex-direction: column; }
+    .location-bar { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+    .concepto-pillars { grid-template-columns: 1fr 1fr; }
+    .footer-proof { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Entrega inmediata disponible
+    </div>
+
+    <h1 class="hero-title">
+      Tu nuevo apartamento<br>
+      en <span>Hato Pintado,</span><br>
+      Panamá
+    </h1>
+
+    <p class="hero-sub">
+      Unidades desde 50 m² hasta 98 m² listas para habitar. Piscina, Skylounge, Coworking y más amenidades de primer nivel en una de las zonas más exclusivas de la ciudad.
+    </p>
+
+    <div class="trust-row">
+      <div class="trust-item">
+        <span class="trust-num">7</span>
+        <span class="trust-label">Tipologías disponibles</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">50–98</span>
+        <span class="trust-label">Metros cuadrados</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">6+</span>
+        <span class="trust-label">Amenidades exclusivas</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="hero-right" id="formulario">
+    <div class="form-card">
+
+      <div id="form-content">
+        <div class="form-card-header">
+          <h2>Recibe información y precios</h2>
+          <p>Un asesor te contactará en menos de 24 horas</p>
+        </div>
+
+        <div class="urgency-bar">
+          🔥 Unidades limitadas con entrega inmediata — ¡Solicita hoy!
+        </div>
+
+        <form id="lead-form" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" placeholder="+507 6000-0000" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="tu@correo.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="interes">Tipología de interés</label>
+            <select id="interes">
+              <option value="">Seleccionar tamaño</option>
+              <option value="D-50">Modelo D – 50 m²</option>
+              <option value="C-66">Modelo C – 66 m²</option>
+              <option value="E-75">Modelo E – 75 m²</option>
+              <option value="F-75">Modelo F – 75 m²</option>
+              <option value="G-82">Modelo G – 82 m²</option>
+              <option value="B-95">Modelo B – 95 m²</option>
+              <option value="A-98">Modelo A – 98 m²</option>
+              <option value="NS">Aún no lo sé</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            📩 Quiero más información
+          </button>
+        </form>
+
+        <a href="https://wa.me/50764747574?text=Hola,%20me%20interesa%20un%20apartamento%20en%20PH%20Balcony.%20¿Pueden%20darme%20más%20información?" target="_blank" rel="noopener" class="btn-wa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar por WhatsApp
+        </a>
+
+        <p class="form-privacy">🔒 Tu información es privada y no se comparte con terceros.</p>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-msg" id="success-msg">
+        <div class="check">✅</div>
+        <h3>¡Recibimos tu solicitud!</h3>
+        <p>Un asesor de PH Balcony te contactará en menos de 24 horas con precios y disponibilidad actualizada.</p>
+        <a href="https://wa.me/50764747574?text=Hola,%20acabo%20de%20enviar%20mis%20datos%20en%20la%20web%20de%20PH%20Balcony%20y%20quisiera%20más%20información" target="_blank" rel="noopener" class="wa-follow">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          También escríbenos por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONCEPTO ══════════════ -->
+<section class="section concepto-section">
+  <div class="concepto-inner">
+    <div class="concepto-text">
+      <div class="section-tag">El Concepto</div>
+      <h2 class="section-title">Diseñado para quienes buscan el equilibrio perfecto</h2>
+      <p style="color:var(--text-muted); line-height:1.85; margin-bottom:1.5rem;">
+        PH Balcony es un proyecto residencial de alta calidad ubicado estratégicamente en Hato Pintado, una de las zonas más exclusivas y mejor conectadas de Ciudad de Panamá. Un edificio diseñado para quienes buscan el equilibrio perfecto entre confort, estilo y conectividad.
+      </p>
+      <p style="color:var(--text-muted); line-height:1.85; margin-bottom:2rem;">
+        Su ubicación privilegiada en una colina permite conectarse rápidamente con diferentes zonas de la ciudad, mientras disfrutas de vistas panorámicas únicas. Cada detalle fue pensado para ofrecerte una experiencia de vida que va más allá de las cuatro paredes de tu apartamento.
+      </p>
+      <div class="concepto-pillars">
+        <div class="pillar"><span class="pillar-icon">🏙️</span><span class="pillar-label">Vista panorámica<br>de la ciudad</span></div>
+        <div class="pillar"><span class="pillar-icon">🌿</span><span class="pillar-label">Zona verde<br>y tranquila</span></div>
+        <div class="pillar"><span class="pillar-icon">⚡</span><span class="pillar-label">Conectividad<br>total</span></div>
+        <div class="pillar"><span class="pillar-icon">✨</span><span class="pillar-label">Acabados<br>de primer nivel</span></div>
+      </div>
+    </div>
+    <div class="concepto-quote">
+      <blockquote>"Hato Pintado se encuentra en una colina que permite tener vistas hacia toda la ciudad de Panamá."</blockquote>
+      <div class="concepto-stats">
+        <div class="cstat"><span class="cstat-num">7</span><span class="cstat-desc">modelos de<br>apartamento</span></div>
+        <div class="cstat-divider"></div>
+        <div class="cstat"><span class="cstat-num">6+</span><span class="cstat-desc">amenidades<br>exclusivas</span></div>
+        <div class="cstat-divider"></div>
+        <div class="cstat"><span class="cstat-num">100%</span><span class="cstat-desc">entrega<br>inmediata</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TIPOLOGÍAS ══════════════ -->
+<section class="section" id="tipologias">
+  <div class="section-tag">Diseño &amp; Espacio</div>
+  <h2 class="section-title">Elige tu tipología</h2>
+  <p class="section-sub">Todos los modelos incluyen acabados de primer nivel y acceso completo a amenidades. Entrega inmediata.</p>
+
+  <div class="tipos-grid">
+    <div class="tipo-card" onclick="selectTipo(this,'D-50','Modelo D – 50 m²')">
+      <div class="tipo-label">D</div>
+      <div class="tipo-m2">50 m²</div>
+      <div class="tipo-desc">Compacto e inteligente</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'C-66','Modelo C – 66 m²')">
+      <div class="tipo-label">C</div>
+      <div class="tipo-m2">66 m²</div>
+      <div class="tipo-desc">Optimizado al máximo</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'E-75','Modelo E – 75 m²')">
+      <div class="tipo-label">E</div>
+      <div class="tipo-m2">75 m²</div>
+      <div class="tipo-desc">Con acceso a balcón</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'F-75','Modelo F – 75 m²')">
+      <div class="tipo-label">F</div>
+      <div class="tipo-m2">75 m²</div>
+      <div class="tipo-desc">Planta versátil</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'G-82','Modelo G – 82 m²')">
+      <div class="tipo-label">G</div>
+      <div class="tipo-m2">82 m²</div>
+      <div class="tipo-desc">Vistas panorámicas</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'B-95','Modelo B – 95 m²')">
+      <div class="tipo-label">B</div>
+      <div class="tipo-m2">95 m²</div>
+      <div class="tipo-desc">Amplio y luminoso</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+    <div class="tipo-card" onclick="selectTipo(this,'A-98','Modelo A – 98 m²')">
+      <div class="tipo-label">A</div>
+      <div class="tipo-m2">98 m²</div>
+      <div class="tipo-desc">El más espacioso</div>
+      <span class="tipo-badge">Disponible</span>
+    </div>
+  </div>
+
+  <div class="tipos-cta">
+    <button onclick="scrollToForm()">Ver precios de la tipología seleccionada →</button>
+  </div>
+</section>
+
+<!-- ══════════════ AMENIDADES ══════════════ -->
+<section class="section bg-white">
+  <div class="section-tag">Estilo de vida</div>
+  <h2 class="section-title">Amenidades de primer nivel</h2>
+  <p class="section-sub">Todo lo que necesitas para vivir bien, dentro de tu propio edificio.</p>
+
+  <div class="amenidades-grid">
+    <div class="amen-card"><div class="amen-icon">🏊</div><div class="amen-name">Piscina Nivel 500</div></div>
+    <div class="amen-card"><div class="amen-icon">💪</div><div class="amen-name">Crossfit</div></div>
+    <div class="amen-card"><div class="amen-icon">🐾</div><div class="amen-name">Pet Garden</div></div>
+    <div class="amen-card"><div class="amen-icon">💼</div><div class="amen-name">Coworking</div></div>
+    <div class="amen-card"><div class="amen-icon">🎮</div><div class="amen-name">Sala de Juegos</div></div>
+    <div class="amen-card"><div class="amen-icon">🌇</div><div class="amen-name">Skylounge Rooftop</div></div>
+  </div>
+</section>
+
+<!-- ══════════════ UBICACIÓN ══════════════ -->
+<div class="location-bar">
+  <div>
+    <div class="location-title">📍 Av. 3½ Norte, Hato Pintado, Ciudad de Panamá</div>
+    <div style="font-size:.78rem; color:var(--text-muted);">Una colina con vistas a toda la ciudad</div>
+  </div>
+  <div>
+    <div style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--green-mid); margin-bottom:.5rem;">Caminando</div>
+    <div class="location-items">
+      <div class="location-item"><div class="loc-dot"></div>1 min · Parque Forestal</div>
+      <div class="location-item"><div class="loc-dot"></div>2 min · Farmacia Arrocha</div>
+      <div class="location-item"><div class="loc-dot"></div>5 min · Supermercado Rey</div>
+      <div class="location-item"><div class="loc-dot"></div>8 min · Parque Omar</div>
+      <div class="location-item"><div class="loc-dot"></div>10 min · Oxford Int'l School</div>
+    </div>
+  </div>
+  <div>
+    <div style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--green-mid); margin-bottom:.5rem;">En automóvil</div>
+    <div class="location-items" style="flex-direction:column; gap:.4rem;">
+      <div class="location-item"><div class="loc-dot"></div>5 min · Acceso a Transistmica</div>
+      <div class="location-item"><div class="loc-dot"></div>10 min · Mall El Dorado</div>
+      <div class="location-item"><div class="loc-dot"></div>18 min · Aeropuerto de Tocumen</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CTA BOTTOM ══════════════ -->
+<div class="cta-bottom">
+  <div>
+    <h2>¿Listo para conocer precios?</h2>
+    <p>Solicita información hoy y un asesor te llama en menos de 24 horas con disponibilidad actualizada.</p>
+  </div>
+  <a href="#formulario" class="btn-cta-white">Solicitar información ahora →</a>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<div class="footer">
+  <div class="footer-360">
+    <span class="footer-360-icon">🔭</span>
+    <div>
+      <div class="footer-360-title">¿Quieres conocer tu apartamento antes de decidir?</div>
+      <a href="https://www.phbalcony.com/data/tour360/17de83e6-2c66-4ddf-bada-893ca901e4c6/index.html" target="_blank" rel="noopener" class="footer-360-link">
+        Recorre PH Balcony en nuestro tour 360° →
+      </a>
+    </div>
+  </div>
+  <div class="footer-proof">
+    <div class="proof-item">
+      <span class="proof-icon">📍</span>
+      <div class="proof-text"><strong>Hato Pintado, Panamá</strong><span>Zona exclusiva y bien conectada</span></div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon">🏗️</span>
+      <div class="proof-text"><strong>Entrega inmediata</strong><span>Unidades disponibles ahora</span></div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon">🏢</span>
+      <div class="proof-text"><strong>Grupo Binian</strong><span>Desarrollador de confianza en Panamá</span></div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon">📞</span>
+      <div class="proof-text"><strong>(507) 6474-7574</strong><span>Atención lunes a sábado</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © PH Balcony · Desarrollado por <a href="https://www.grupobinian.com" target="_blank">Grupo Binian</a> · Av. 3½ Norte, Hato Pintado, Panamá<br>
+    <a href="tel:50764747574">(507) 6474-7574</a> · <a href="mailto:ventas@grupobinian.com">ventas@grupobinian.com</a>
+  </div>
+</div>
+
+<script>
+  function submitForm(e) {
+    e.preventDefault();
+    // ── Aquí conectar con tu CRM / Zapier / Google Sheets ──
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-msg').style.display  = 'block';
+  }
+
+  function selectTipo(el, value, label) {
+    document.querySelectorAll('.tipo-card').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    var sel = document.getElementById('interes');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === value) { sel.selectedIndex = i; break; }
+    }
+  }
+
+  function scrollToForm() {
+    document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(function(){ document.getElementById('nombre').focus(); }, 600);
+  }
+</script>
+</body>
+</html>

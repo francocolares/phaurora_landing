@@ -107,50 +107,131 @@
 
   <!-- ═══════════════════════ HEADER ═══════════════════════ -->
   <header class="site-header" id="site-header">
-    <div class="header-inner container">
+    <div class="header-inner container header-simple">
       <a href="#hero" class="header-logo" aria-label="PH Aurora — Inicio">
         <img src="https://www.phaurora.com/data/project/2020/07/menu_logo_img/c09465d68f6e4461997de824a88adce0" alt="PH Aurora logo" width="140" height="50" />
       </a>
-
-      <nav class="header-nav" id="header-nav" aria-label="Navegación principal">
-        <a href="#concepto" class="nav-link">Concepto</a>
-        <a href="#amenidades" class="nav-link">Amenidades</a>
-        <a href="#apartamentos" class="nav-link">Apartamentos</a>
-        <a href="#proyecto" class="nav-link">El Proyecto</a>
-        <a href="#galeria" class="nav-link">Galería</a>
-        <a href="#ubicacion" class="nav-link">Ubicación</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="https://en.phaurora.com/" class="lang-switch" aria-label="Switch to English">EN</a>
-        <a href="https://wa.me/50764747574?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20de%20PH%20AURORA.%20www.phaurora.com" class="btn btn-wa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          WhatsApp
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="header-nav">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <a href="#formulario" class="btn btn-primary btn-sm">Solicitar información</a>
     </div>
   </header>
 
   <!-- ═══════════════════════ HERO ═══════════════════════ -->
   <section class="hero" id="hero" aria-label="PH Aurora — Portada">
-    <div class="hero-bg" style="background-image:url('https://www.phaurora.com/data/project/2022/08/intro_img/1f7fd5a9c051424d9e8f5afa30161eda')" role="img" aria-label="Vista exterior PH Aurora en San Francisco, Panamá"></div>
+    <div class="hero-video-bg">
+      <div class="hero-video-fallback" style="background-image:url('https://www.phaurora.com/data/project/2022/08/intro_img/1f7fd5a9c051424d9e8f5afa30161eda')"></div>
+      <iframe
+        src="https://player.vimeo.com/video/1105515540?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        title="PH Aurora"
+        aria-hidden="true"
+      ></iframe>
+    </div>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <img class="hero-logo" src="https://www.phaurora.com/data/project/2020/07/home_logo_img/b50e3cbe89e94538b5bbf07ef957aae1" alt="PH Aurora" width="320" height="140" />
-      <p class="hero-tagline">Tu apartamento en San Francisco</p>
-      <div class="hero-actions">
-        <a href="#concepto" class="btn btn-primary">Descubrir</a>
-        <a href="https://www.phaurora.com" class="btn btn-outline" target="_blank" rel="noopener">Explorar en 3D</a>
+
+    <div class="hero-split container">
+      <div class="hero-info">
+        <img class="hero-logo" src="https://www.phaurora.com/data/project/2020/07/home_logo_img/b50e3cbe89e94538b5bbf07ef957aae1" alt="PH Aurora" width="320" height="140" />
+        <p class="hero-tagline">Tu apartamento en San Francisco</p>
+        <div class="trust-row">
+          <div class="trust-item">
+            <span class="trust-num">3</span>
+            <span class="trust-label">Modelos de apartamento</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num">7+</span>
+            <span class="trust-label">Amenidades exclusivas</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num">30</span>
+            <span class="trust-label">Pisos de altura</span>
+          </div>
+        </div>
+        <div class="amenities-mini">
+          <span class="amenity-tag">Piscina Nivel 500</span>
+          <span class="amenity-tag">Gym Rooftop</span>
+          <span class="amenity-tag">Sky Lounge</span>
+          <span class="amenity-tag">Coworking</span>
+          <span class="amenity-tag">Pet Center</span>
+          <span class="amenity-tag">Sala de Masajes</span>
+        </div>
       </div>
     </div>
-    <a href="#concepto" class="hero-scroll" aria-label="Ir al siguiente sección">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-    </a>
+
   </section>
+
+  <!-- ── Formulario ── -->
+  <div class="hero-form-wrap" id="formulario">
+    <div class="hero-form-card">
+
+      <div id="form-content">
+        <div class="form-card-header">
+          <h2>Recibe información y precios</h2>
+          <p>Un asesor te contactará en menos de 24 horas</p>
+        </div>
+
+        <div class="urgency-bar">
+          <span class="urgency-dot"></span>
+          Últimas unidades disponibles — Solicita información hoy
+        </div>
+
+        <form id="lead-form" novalidate>
+          <div class="form-fields-grid">
+            <div class="form-field">
+              <label for="f-nombre">Nombre completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="f-telefono">Teléfono / WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="f-telefono" name="telefono" placeholder="+507 0000-0000" required autocomplete="tel" />
+            </div>
+            <div class="form-field">
+              <label for="f-email">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input type="email" id="f-email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="f-tipologia">Tipología de interés</label>
+              <select id="f-tipologia" name="tipologia">
+                <option value="">Seleccionar modelo</option>
+                <option value="Modelo 1 (Apts. B y E)">Modelo 1 — Apts. B y E</option>
+                <option value="Modelo 2 (Apts. C y D)">Modelo 2 — Apts. C y D</option>
+                <option value="Modelo 3 (Apts. A y F)">Modelo 3 — Apts. A y F</option>
+                <option value="Sin definir">Aún no lo sé</option>
+              </select>
+            </div>
+          </div>
+          <p class="form-error" id="form-error" aria-live="polite" hidden>Por favor completa todos los campos requeridos.</p>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:.5rem;">
+            Quiero más información
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+
+        <a href="https://wa.me/50764747574?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20de%20PH%20AURORA.%20www.phaurora.com" class="btn btn-wa btn-block" style="margin-top:.75rem;" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar por WhatsApp
+        </a>
+
+        <p class="form-privacy">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Tu información es privada y no se comparte con terceros.
+        </p>
+      </div>
+
+      <!-- ── Estado de éxito ── -->
+      <div class="success-msg" id="success-msg" hidden>
+        <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3>Recibimos tu solicitud</h3>
+        <p>Un asesor de PH Aurora te contactará en menos de 24 horas con precios y disponibilidad actualizada.</p>
+        <a href="https://wa.me/50764747574?text=Hola%2C%20acabo%20de%20enviar%20mis%20datos%20en%20la%20web%20de%20PH%20Aurora%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-wa btn-block" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          También escríbenos por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ═══════════════════════ CONCEPTO ═══════════════════════ -->
   <section class="section concepto" id="concepto" aria-labelledby="concepto-title">
@@ -160,7 +241,6 @@
         <h2 id="concepto-title">Vida plena en el corazón de San Francisco</h2>
         <p>PH Aurora es más que un hogar — es una dirección que lo conecta con todo. Ubicado en Calle 73 Este y Av. 5 Sur, en el corazón de San Francisco, Panamá, este proyecto reúne arquitectura contemporánea, amenidades de primer nivel y la conveniencia que su estilo de vida exige.</p>
         <p>A pasos del Parque Omar Torrijos, Multiplaza Panamá y las avenidas principales de Calle 50 y Vía Israel. Todo lo que necesitas está a un minuto de tu puerta.</p>
-        <a href="#contacto" class="btn btn-primary">Solicitar información</a>
       </div>
       <div class="concepto-img reveal reveal-right">
         <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/cbf5025383ec4a308e69398cb605df9e" alt="Fachada exterior PH Aurora" loading="lazy" width="700" height="520" />
@@ -168,15 +248,142 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ GRUPO BINIAN ═══════════════════════ -->
-  <section class="section binian-strip" aria-label="Desarrollado por Grupo Binian">
-    <div class="container binian-inner reveal">
-      <div class="binian-text">
-        <span class="section-label" style="color:var(--color-primary-light)">Desarrollado por</span>
-        <h3>Grupo Binian</h3>
-        <p>Desarrolladora con trayectoria y visión. Calle 44, Bella Vista, PH. Altamira Residences, Ciudad de Panamá.</p>
+  <!-- ═══════════════════════ TIPOLOGÍAS ═══════════════════════ -->
+  <section class="section apartamentos" id="apartamentos" aria-labelledby="apartamentos-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Tipologías</span>
+        <h2 id="apartamentos-title">Tu apartamento, tu estilo</h2>
+        <p>Tres modelos diseñados con acabados de primer nivel, iluminación natural y vistas privilegiadas hacia la ciudad de Panamá.</p>
       </div>
-      <a href="https://www.grupobinian.com" class="btn btn-outline-light" target="_blank" rel="noopener">Conocer más</a>
+      <div class="tipologias-grid">
+        <article class="tipologia-card reveal">
+          <div class="tipologia-img">
+            <img src="https://www.phaurora.com/data/unitgroup/2021/08/floor_plans_3d_image/2f557bc98dfe48b88f33a8fab07d24db" alt="Planta Modelo 1 — Apartamentos B y E" loading="lazy" width="500" height="380" />
+          </div>
+          <div class="tipologia-info">
+            <div class="tipologia-meta">
+              <h3>Modelo 1</h3>
+              <p class="tipologia-label">Apartamentos B &amp; E</p>
+            </div>
+            <div class="tipologia-features">
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5v16h6v-1.5H7V18h2v-1.5H5V15h4v-1.5H7V12h2v-1.5H5V9h4V5h1.5v4H12V7h1.5v2H15V5h1.5v4H18V7h1.5v2H21V3H5a2 2 0 0 0-2 2m3 2a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1a1 1 0 0 1-1 1"/></svg>
+                </span>
+                <span class="feat-text"><strong>80 m²</strong><small>Área total</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4M7 13a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3"/></svg>
+                </span>
+                <span class="feat-text"><strong>2</strong><small>Recámaras</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14v1c0 1.91-1.07 3.57-2.65 4.41L19 22h-2l-.5-2h-9L7 22H5l.65-2.59A4.99 4.99 0 0 1 3 15v-1H2v-2h18V5a1 1 0 0 0-1-1c-.5 0-.88.34-1 .79c.63.54 1 1.34 1 2.21h-6a3 3 0 0 1 3-3h.17c.41-1.16 1.52-2 2.83-2a3 3 0 0 1 3 3v9zm-2 0H5v1a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3z"/></svg>
+                </span>
+                <span class="feat-text"><strong>2</strong><small>Baños</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 10v2H8v-2zm6 2v-2h-2v2zm5 2v8H3v-8h1v-4c0-4.42 3.58-8 8-8s8 3.58 8 8v4zM7 16H5v4h2zm4 0H9v4h2zm0-11.92C8.16 4.56 6 7.03 6 10v4h5zM13 14h5v-4c0-2.97-2.16-5.44-5-5.92zm2 2h-2v4h2zm4 0h-2v4h2z"/></svg>
+                </span>
+                <span class="feat-text"><strong>Sí</strong><small>Balcón</small></span>
+              </div>
+            </div>
+            <a href="#formulario" class="tipologia-cta">
+              Consultar precio
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="tipologia-card reveal">
+          <div class="tipologia-img">
+            <img src="https://www.phaurora.com/data/unitgroup/2020/10/floor_plans_3d_image/267780d5da19470489919bb99c22bdad" alt="Planta Modelo 3 — Apartamentos A y F" loading="lazy" width="500" height="380" />
+          </div>
+          <div class="tipologia-info">
+            <div class="tipologia-meta">
+              <h3>Modelo 3</h3>
+              <p class="tipologia-label">Apartamentos A &amp; F</p>
+            </div>
+            <div class="tipologia-features">
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5v16h6v-1.5H7V18h2v-1.5H5V15h4v-1.5H7V12h2v-1.5H5V9h4V5h1.5v4H12V7h1.5v2H15V5h1.5v4H18V7h1.5v2H21V3H5a2 2 0 0 0-2 2m3 2a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1a1 1 0 0 1-1 1"/></svg>
+                </span>
+                <span class="feat-text"><strong>120 m²</strong><small>Área total</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4M7 13a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3"/></svg>
+                </span>
+                <span class="feat-text"><strong>3</strong><small>Recámaras</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14v1c0 1.91-1.07 3.57-2.65 4.41L19 22h-2l-.5-2h-9L7 22H5l.65-2.59A4.99 4.99 0 0 1 3 15v-1H2v-2h18V5a1 1 0 0 0-1-1c-.5 0-.88.34-1 .79c.63.54 1 1.34 1 2.21h-6a3 3 0 0 1 3-3h.17c.41-1.16 1.52-2 2.83-2a3 3 0 0 1 3 3v9zm-2 0H5v1a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3z"/></svg>
+                </span>
+                <span class="feat-text"><strong>2.5</strong><small>Baños</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m5 11l1.5-4.5h11L19 11m-1.5 5a1.5 1.5 0 0 1-1.5-1.5a1.5 1.5 0 0 1 1.5-1.5a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m-11 0A1.5 1.5 0 0 1 5 14.5A1.5 1.5 0 0 1 6.5 13A1.5 1.5 0 0 1 8 14.5A1.5 1.5 0 0 1 6.5 16M18.92 6c-.2-.58-.76-1-1.42-1h-11c-.66 0-1.22.42-1.42 1L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8z"/></svg>
+                </span>
+                <span class="feat-text"><strong>2</strong><small>Parkings</small></span>
+              </div>
+            </div>
+            <a href="#formulario" class="tipologia-cta">
+              Consultar precio
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="tipologia-card reveal">
+          <div class="tipologia-img">
+            <img src="https://www.phaurora.com/data/unitgroup/2020/10/floor_plans_3d_image/049ef62718954c5e8fdacc12b0e1dacb" alt="Planta Modelo 2 — Apartamentos C y D" loading="lazy" width="500" height="380" />
+          </div>
+          <div class="tipologia-info">
+            <div class="tipologia-meta">
+              <h3>Modelo 2</h3>
+              <p class="tipologia-label">Apartamentos C &amp; D</p>
+            </div>
+            <div class="tipologia-features">
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5v16h6v-1.5H7V18h2v-1.5H5V15h4v-1.5H7V12h2v-1.5H5V9h4V5h1.5v4H12V7h1.5v2H15V5h1.5v4H18V7h1.5v2H21V3H5a2 2 0 0 0-2 2m3 2a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1a1 1 0 0 1-1 1"/></svg>
+                </span>
+                <span class="feat-text"><strong>106 m²</strong><small>Área total</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4M7 13a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3"/></svg>
+                </span>
+                <span class="feat-text"><strong>3</strong><small>Recámaras</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14v1c0 1.91-1.07 3.57-2.65 4.41L19 22h-2l-.5-2h-9L7 22H5l.65-2.59A4.99 4.99 0 0 1 3 15v-1H2v-2h18V5a1 1 0 0 0-1-1c-.5 0-.88.34-1 .79c.63.54 1 1.34 1 2.21h-6a3 3 0 0 1 3-3h.17c.41-1.16 1.52-2 2.83-2a3 3 0 0 1 3 3v9zm-2 0H5v1a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3z"/></svg>
+                </span>
+                <span class="feat-text"><strong>2</strong><small>Baños</small></span>
+              </div>
+              <div class="tipologia-feat">
+                <span class="feat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 10v2H8v-2zm6 2v-2h-2v2zm5 2v8H3v-8h1v-4c0-4.42 3.58-8 8-8s8 3.58 8 8v4zM7 16H5v4h2zm4 0H9v4h2zm0-11.92C8.16 4.56 6 7.03 6 10v4h5zM13 14h5v-4c0-2.97-2.16-5.44-5-5.92zm2 2h-2v4h2zm4 0h-2v4h2z"/></svg>
+                </span>
+                <span class="feat-text"><strong>Sí</strong><small>Balcón</small></span>
+              </div>
+            </div>
+            <a href="#formulario" class="tipologia-cta">
+              Consultar precio
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="section-cta reveal">
+        <a href="#formulario" class="btn btn-primary">Solicitar precios y disponibilidad</a>
+      </div>
     </div>
   </section>
 
@@ -226,162 +433,6 @@
           <div class="bento-label">Lounge Rooftop</div>
         </div>
       </div>
-      <div class="section-cta reveal">
-        <a href="https://www.phaurora.com" class="btn btn-primary" target="_blank" rel="noopener">Explorar amenidades en 3D</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ APARTAMENTOS ═══════════════════════ -->
-  <section class="section apartamentos" id="apartamentos" aria-labelledby="apartamentos-title">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Tipologías</span>
-        <h2 id="apartamentos-title">Tu apartamento, tu estilo</h2>
-        <p>Tres modelos diseñados con acabados de primer nivel, iluminación natural y vistas privilegiadas hacia la ciudad de Panamá.</p>
-      </div>
-      <div class="tipologias-grid">
-        <article class="tipologia-card reveal">
-          <div class="tipologia-img">
-            <img src="https://www.phaurora.com/data/unitgroup/2021/08/floor_plans_3d_image/2f557bc98dfe48b88f33a8fab07d24db" alt="Planta Modelo 1 — Apartamentos B y E" loading="lazy" width="500" height="380" />
-          </div>
-          <div class="tipologia-info">
-            <h3>Modelo 1</h3>
-            <p class="tipologia-label">Apartamentos B &amp; E</p>
-            <a href="https://www.phaurora.com" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Ver en 3D</a>
-          </div>
-        </article>
-        <article class="tipologia-card reveal">
-          <div class="tipologia-img">
-            <img src="https://www.phaurora.com/data/unitgroup/2020/10/floor_plans_3d_image/267780d5da19470489919bb99c22bdad" alt="Planta Modelo 3 — Apartamentos A y F" loading="lazy" width="500" height="380" />
-          </div>
-          <div class="tipologia-info">
-            <h3>Modelo 3</h3>
-            <p class="tipologia-label">Apartamentos A &amp; F</p>
-            <a href="https://www.phaurora.com" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Ver en 3D</a>
-          </div>
-        </article>
-        <article class="tipologia-card reveal">
-          <div class="tipologia-img">
-            <img src="https://www.phaurora.com/data/unitgroup/2020/10/floor_plans_3d_image/049ef62718954c5e8fdacc12b0e1dacb" alt="Planta Modelo 2 — Apartamentos C y D" loading="lazy" width="500" height="380" />
-          </div>
-          <div class="tipologia-info">
-            <h3>Modelo 2</h3>
-            <p class="tipologia-label">Apartamentos C &amp; D</p>
-            <a href="https://www.phaurora.com" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Ver en 3D</a>
-          </div>
-        </article>
-      </div>
-      <div class="section-cta reveal">
-        <a href="https://www.phaurora.com" class="btn btn-primary" target="_blank" rel="noopener">Explorar apartamentos en 3D</a>
-        <a href="https://www.phaurora.com/data/project/2025/06/general_project_brochure/43d63fc4e0f94a18bdd0070759ead1c4" class="btn btn-outline-primary" target="_blank" rel="noopener" download>Descargar brochure</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ DISPONIBILIDAD ═══════════════════════ -->
-  <section class="section disponibilidad" id="disponibilidad" aria-labelledby="disponibilidad-title">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Disponibilidad</span>
-        <h2 id="disponibilidad-title">Encuentra tu unidad ideal</h2>
-        <p>Consulta los planos de disponibilidad por tipología y nivel.</p>
-      </div>
-      <div class="disponibilidad-slider" id="disp-slider">
-        <div class="disp-track" id="disp-track">
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/6aa4a7cd3cbc4ed4b931b399acdcb918" alt="Disponibilidad Tipologías A, B y F" loading="lazy" width="900" height="600" />
-            <p>Disponibilidad A · B · F</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/afc978766fdf46a0b9d37045a4094b55" alt="Disponibilidad Tipología E" loading="lazy" width="900" height="600" />
-            <p>Disponibilidad E</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/b77fa0adf2e24968a97ade7462a0b81c" alt="Disponibilidad Tipologías C y D" loading="lazy" width="900" height="600" />
-            <p>Disponibilidad C · D</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/73560d6ba4f442149be75933ec1e7e63" alt="Planta por tipología A y F" loading="lazy" width="900" height="600" />
-            <p>Tipología A · F</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/6a8a7e9704504c969d4ece9cbf3f815d" alt="Planta por tipología C y D" loading="lazy" width="900" height="600" />
-            <p>Tipología C · D</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/d1a12d5c7b154c1ba81d9746de747f5d" alt="Planta por tipología B" loading="lazy" width="900" height="600" />
-            <p>Tipología B</p>
-          </div>
-          <div class="disp-slide">
-            <img src="https://www.phaurora.com/data/imageforimagegallery/2025/06/image/0b58d2c2d8f14e83bc18c99594049841" alt="Planta por tipología E" loading="lazy" width="900" height="600" />
-            <p>Tipología E</p>
-          </div>
-        </div>
-        <button class="slider-btn slider-prev" id="disp-prev" aria-label="Anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="slider-btn slider-next" id="disp-next" aria-label="Siguiente">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <div class="slider-dots" id="disp-dots" role="tablist" aria-label="Diapositivas de disponibilidad"></div>
-      </div>
-      <div class="section-cta reveal">
-        <a href="https://www.phaurora.com" class="btn btn-primary" target="_blank" rel="noopener">Ver disponibilidad en vivo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ EL PROYECTO ═══════════════════════ -->
-  <section class="section proyecto" id="proyecto" aria-labelledby="proyecto-title">
-    <div class="proyecto-bg">
-      <div class="proyecto-slides" id="proyecto-slides">
-        <div class="proyecto-slide active" style="background-image:url('https://www.phaurora.com/data/project/2023/01/spin_point_a_img/1fe8d6fc158546948295716d45c9b002')"></div>
-        <div class="proyecto-slide" style="background-image:url('https://www.phaurora.com/data/project/2023/01/spin_point_b_img/8063ada6c64148aaa44ae4a498e200cc')"></div>
-        <div class="proyecto-slide" style="background-image:url('https://www.phaurora.com/data/imageforimagegallery/2025/08/image/a5d85d92ca974853b93394a4fe9b0564')"></div>
-      </div>
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="proyecto-content container reveal">
-      <span class="section-label" style="color:rgba(255,255,255,.7)">El Proyecto</span>
-      <h2 id="proyecto-title">PH Aurora desde todos los ángulos</h2>
-      <p>Un edificio de 30 pisos con amenidades en Nivel 500, 550 y Rooftop. Diseñado para ofrecer vistas panorámicas de la ciudad de Panamá desde cada unidad.</p>
-      <div class="proyecto-actions">
-        <a href="https://www.phaurora.com" class="btn btn-primary" target="_blank" rel="noopener">Explorar el proyecto en 3D</a>
-        <a href="https://www.phaurora.com" class="btn btn-outline-light" target="_blank" rel="noopener">Tour 360° exterior</a>
-      </div>
-    </div>
-    <div class="proyecto-nav">
-      <button class="proyecto-dot active" aria-label="Vista 1" data-slide="0"></button>
-      <button class="proyecto-dot" aria-label="Vista 2" data-slide="1"></button>
-      <button class="proyecto-dot" aria-label="Vista 3" data-slide="2"></button>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ GALERÍA ═══════════════════════ -->
-  <section class="section galeria" id="galeria" aria-labelledby="galeria-title">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Galería</span>
-        <h2 id="galeria-title">PH Aurora</h2>
-      </div>
-      <div class="galeria-bento">
-        <button class="galeria-item galeria-tall reveal" data-index="0" aria-label="Ver imagen 1">
-          <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/cbf5025383ec4a308e69398cb605df9e" alt="PH Aurora vista exterior" loading="lazy" width="500" height="700" />
-        </button>
-        <button class="galeria-item reveal" data-index="1" aria-label="Ver imagen 2">
-          <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/a5d85d92ca974853b93394a4fe9b0564" alt="PH Aurora vista exterior 2" loading="lazy" width="500" height="340" />
-        </button>
-        <button class="galeria-item reveal" data-index="2" aria-label="Ver imagen 3">
-          <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/279d563eb65847b6b5d574cdaddf0c09" alt="PH Aurora vista exterior 3" loading="lazy" width="500" height="340" />
-        </button>
-        <button class="galeria-item reveal" data-index="3" aria-label="Ver imagen 4">
-          <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/36c28734a7ae439fbdcad9614ca8ab2f" alt="PH Aurora vista exterior 4" loading="lazy" width="500" height="340" />
-        </button>
-        <button class="galeria-item reveal" data-index="4" aria-label="Ver imagen 5">
-          <img src="https://www.phaurora.com/data/imageforimagegallery/2025/08/image/aa2a41f63e4a4631892f7991ee042cc5" alt="PH Aurora vista exterior 5" loading="lazy" width="500" height="340" />
-        </button>
-      </div>
     </div>
   </section>
 
@@ -410,95 +461,32 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ CONTACTO ═══════════════════════ -->
-  <section class="section contacto" id="contacto" aria-labelledby="contacto-title">
-    <div class="contacto-bg" style="background-image:url('https://www.phaurora.com/data/project/2020/10/contact_page_background_img/753909011987434ab43fec6382cb55')"></div>
-    <div class="hero-overlay"></div>
-    <div class="container contacto-grid">
-      <div class="contacto-info reveal">
-        <span class="section-label" style="color:rgba(255,255,255,.7)">Contáctanos</span>
-        <h2 id="contacto-title">Proyecto Aurora</h2>
-        <p>Calle 73 Este y Av. 5 Sur, San Francisco</p>
-        <div class="contacto-direct">
-          <a href="https://wa.me/50764747574?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20de%20PH%20AURORA.%20www.phaurora.com" class="direct-link" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            (507) 6474-7574
-          </a>
-          <a href="tel:50764747574" class="direct-link" aria-label="Llamar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            (507) 6474-7574
-          </a>
-          <a href="mailto:ventas@grupobinian.com" class="direct-link" aria-label="Correo electrónico">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            ventas@grupobinian.com
-          </a>
-        </div>
+  <!-- ═══════════════════════ CTA BOTTOM ═══════════════════════ -->
+  <div class="cta-bottom">
+    <div class="container cta-bottom-inner">
+      <div>
+        <h2>¿Listo para conocer precios?</h2>
+        <p>Solicita información hoy y un asesor te llama en menos de 24 horas con disponibilidad actualizada.</p>
       </div>
-      <div class="contacto-form-wrap reveal reveal-right">
-        <form class="contacto-form" id="contacto-form" novalidate>
-          <h3>Solicitar información</h3>
-          <div class="form-field">
-            <label for="f-nombre">Nombre completo <span aria-hidden="true">*</span></label>
-            <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
-          </div>
-          <div class="form-field">
-            <label for="f-telefono">Teléfono <span aria-hidden="true">*</span></label>
-            <input type="tel" id="f-telefono" name="telefono" placeholder="+507 0000 0000" required autocomplete="tel" />
-          </div>
-          <div class="form-field">
-            <label for="f-email">Correo electrónico <span aria-hidden="true">*</span></label>
-            <input type="email" id="f-email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
-          </div>
-          <div class="form-field">
-            <label for="f-mensaje">Mensaje</label>
-            <textarea id="f-mensaje" name="mensaje" rows="3" placeholder="¿Qué te gustaría saber?"></textarea>
-          </div>
-          <p class="form-error" id="form-error" aria-live="polite" hidden>Por favor completa todos los campos requeridos.</p>
-          <button type="submit" class="btn btn-wa btn-block">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            Enviar por WhatsApp
-          </button>
-        </form>
-      </div>
+      <a href="#formulario" class="btn btn-outline">Solicitar información ahora →</a>
     </div>
-  </section>
+  </div>
 
   <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
   <footer class="site-footer" aria-label="Pie de página">
-    <div class="container footer-inner">
+    <div class="container footer-inner footer-inner-simple">
       <div class="footer-brand">
         <img src="https://www.phaurora.com/data/project/2020/07/menu_logo_img/c09465d68f6e4461997de824a88adce0" alt="PH Aurora" width="120" height="44" loading="lazy" />
         <p>Desarrollado por <a href="https://www.grupobinian.com" target="_blank" rel="noopener">Grupo Binian</a></p>
+        <p style="margin-top:.4rem;"><a href="tel:50764747574">(507) 6474-7574</a> · <a href="mailto:ventas@grupobinian.com">ventas@grupobinian.com</a></p>
       </div>
-      <nav class="footer-links" aria-label="Links legales y redes">
+      <nav class="footer-links" aria-label="Links legales">
         <a href="#" id="privacy-link">Política de Privacidad</a>
         <a href="#" id="disclaimer-link">Descargo de Responsabilidad</a>
-        <a href="https://en.phaurora.com/" aria-label="English version">English</a>
       </nav>
-      <div class="footer-social">
-        <span>Síguenos en</span>
-        <a href="https://www.instagram.com/grupobinian/?hl=es" target="_blank" rel="noopener" aria-label="Instagram de Grupo Binian">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://www.facebook.com/grupobinian/" target="_blank" rel="noopener" aria-label="Facebook de Grupo Binian">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-      </div>
     </div>
     <p class="footer-copy">© <span id="copy-year">2025</span> PH Aurora · Grupo Binian. Todos los derechos reservados.</p>
   </footer>
-
-  <!-- ═══════════════════════ LIGHTBOX ═══════════════════════ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
-    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">&times;</button>
-    <button class="lightbox-prev" id="lightbox-prev" aria-label="Imagen anterior">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-    <button class="lightbox-next" id="lightbox-next" aria-label="Imagen siguiente">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-  </div>
 
   <!-- ═══════════════════════ MODALES ═══════════════════════ -->
   <div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="modal-privacy-title" hidden>

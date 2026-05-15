@@ -17,40 +17,7 @@
   update();
 })();
 
-/* ── 2. Mobile hamburger menu ── */
-(function initMenu() {
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('header-nav');
-  if (!btn || !nav) return;
-
-  btn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      btn.focus();
-    }
-  });
-})();
-
-/* ── 3. Reveal on scroll (IntersectionObserver) ── */
+/* ── 2. Reveal on scroll (IntersectionObserver) ── */
 (function initReveal() {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
@@ -67,148 +34,49 @@
   els.forEach(el => observer.observe(el));
 })();
 
-/* ── 4. Hero bg parallax-lite & load class ── */
+/* ── 3. Hero bg load + video resize ── */
 (function initHero() {
-  const hero = document.querySelector('.hero');
+  const hero   = document.querySelector('.hero');
+  const iframe = hero?.querySelector('.hero-video-bg iframe');
   if (!hero) return;
+
   requestAnimationFrame(() => hero.classList.add('loaded'));
+
+  if (!iframe) return;
+
+  const RATIO = 16 / 9;
+
+  function resizeHeroBg() {
+    const w = hero.offsetWidth;
+    const h = hero.offsetHeight;
+    if (w / h > RATIO) {
+      iframe.style.width  = w + 'px';
+      iframe.style.height = (w / RATIO) + 'px';
+    } else {
+      iframe.style.height = h + 'px';
+      iframe.style.width  = (h * RATIO) + 'px';
+    }
+  }
+
+  resizeHeroBg();
+  window.addEventListener('resize', resizeHeroBg, { passive: true });
 })();
 
-/* ── 5. Disponibilidad slider ── */
-(function initDispSlider() {
-  const track = document.getElementById('disp-track');
-  const prev  = document.getElementById('disp-prev');
-  const next  = document.getElementById('disp-next');
-  const dotsContainer = document.getElementById('disp-dots');
-  if (!track) return;
-
-  const slides = track.querySelectorAll('.disp-slide');
-  const total  = slides.length;
-  let current  = 0;
-
-  /* Build dots */
-  const dots = Array.from({ length: total }, (_, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    btn.setAttribute('role', 'tab');
-    btn.setAttribute('aria-label', `Diapositiva ${i + 1}`);
-    btn.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(btn);
-    return btn;
-  });
-
-  const goTo = (index) => {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-  };
-
-  prev.addEventListener('click', () => goTo(current - 1));
-  next.addEventListener('click', () => goTo(current + 1));
-
-  /* Touch swipe */
-  let startX = 0;
-  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
-  });
-
-  /* Auto-advance */
-  let timer = setInterval(() => goTo(current + 1), 4500);
-  track.addEventListener('mouseenter', () => clearInterval(timer));
-  track.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), 4500); });
-})();
-
-/* ── 6. El Proyecto background slider ── */
-(function initProyectoSlider() {
-  const slides = document.querySelectorAll('.proyecto-slide');
-  const dots   = document.querySelectorAll('.proyecto-dot');
-  if (!slides.length) return;
-
-  let current = 0;
-  let timer;
-
-  const goTo = (index) => {
-    slides[current].classList.remove('active');
-    dots[current]?.classList.remove('active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current]?.classList.add('active');
-  };
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      goTo(+dot.dataset.slide);
-      resetTimer();
-    });
-  });
-
-  const resetTimer = () => {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 5000);
-  };
-
-  resetTimer();
-})();
-
-/* ── 7. Galería lightbox ── */
-(function initLightbox() {
-  const lb      = document.getElementById('lightbox');
-  const lbImg   = document.getElementById('lightbox-img');
-  const lbClose = document.getElementById('lightbox-close');
-  const lbPrev  = document.getElementById('lightbox-prev');
-  const lbNext  = document.getElementById('lightbox-next');
-  if (!lb) return;
-
-  const items = Array.from(document.querySelectorAll('.galeria-item'));
-  let currentIndex = 0;
-
-  const open = (index) => {
-    currentIndex = index;
-    const img = items[index].querySelector('img');
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
-    lb.hidden = false;
-    document.body.style.overflow = 'hidden';
-    lbClose.focus();
-  };
-
-  const close = () => {
-    lb.hidden = true;
-    document.body.style.overflow = '';
-    items[currentIndex]?.focus();
-  };
-
-  const navigate = (dir) => open((currentIndex + dir + items.length) % items.length);
-
-  items.forEach((item, i) => item.addEventListener('click', () => open(i)));
-  lbClose.addEventListener('click', close);
-  lbPrev.addEventListener('click',  () => navigate(-1));
-  lbNext.addEventListener('click',  () => navigate(1));
-  lb.addEventListener('click', e => { if (e.target === lb) close(); });
-
-  document.addEventListener('keydown', e => {
-    if (lb.hidden) return;
-    if (e.key === 'Escape')     close();
-    if (e.key === 'ArrowLeft')  navigate(-1);
-    if (e.key === 'ArrowRight') navigate(1);
-  });
-})();
-
-/* ── 8. Contact form → WhatsApp ── */
-(function initContactForm() {
-  const form = document.getElementById('contacto-form');
-  const errEl = document.getElementById('form-error');
+/* ── 4. Lead form (hero) ── */
+(function initLeadForm() {
+  const form        = document.getElementById('lead-form');
+  const errEl       = document.getElementById('form-error');
+  const formContent = document.getElementById('form-content');
+  const successMsg  = document.getElementById('success-msg');
   if (!form) return;
 
   form.addEventListener('submit', e => {
     e.preventDefault();
 
-    const nombre   = form.querySelector('#f-nombre').value.trim();
-    const telefono = form.querySelector('#f-telefono').value.trim();
-    const email    = form.querySelector('#f-email').value.trim();
-    const mensaje  = form.querySelector('#f-mensaje').value.trim();
+    const nombre    = form.querySelector('#f-nombre').value.trim();
+    const telefono  = form.querySelector('#f-telefono').value.trim();
+    const email     = form.querySelector('#f-email').value.trim();
+    const tipologia = form.querySelector('#f-tipologia').value;
 
     if (!nombre || !telefono || !email) {
       errEl.hidden = false;
@@ -218,20 +86,28 @@
 
     errEl.hidden = true;
 
+    /* Enviar lead a WhatsApp */
     const text = [
       `Hola, mi nombre es ${nombre}.`,
       `Teléfono: ${telefono}`,
       `Email: ${email}`,
-      mensaje ? `Mensaje: ${mensaje}` : '',
+      tipologia ? `Tipología de interés: ${tipologia}` : '',
       `Me gustaría más información de PH AURORA. www.phaurora.com`
     ].filter(Boolean).join('\n');
 
-    const url = `https://wa.me/50764747574?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(
+      `https://wa.me/50764747574?text=${encodeURIComponent(text)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
+
+    /* Mostrar estado de éxito con acceso al tour 360° */
+    formContent.style.display = 'none';
+    successMsg.hidden = false;
   });
 })();
 
-/* ── 9. Privacy & Disclaimer modals ── */
+/* ── 5. Privacy & Disclaimer modals ── */
 (function initModals() {
   const privacyLink     = document.getElementById('privacy-link');
   const disclaimerLink  = document.getElementById('disclaimer-link');
@@ -288,7 +164,7 @@
   });
 })();
 
-/* ── 10. Google Map (deferred) ── */
+/* ── 6. Google Map (deferred) ── */
 (function initMap() {
   const mapContainer = document.getElementById('map-container');
   const mapDiv       = document.getElementById('google-map');
@@ -350,7 +226,7 @@
   observer.observe(mapContainer);
 })();
 
-/* ── 11. Footer copyright year ── */
+/* ── 7. Footer copyright year ── */
 (function initYear() {
   const el = document.getElementById('copy-year');
   if (el) el.textContent = new Date().getFullYear();

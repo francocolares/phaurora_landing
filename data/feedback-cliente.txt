@@ -1,0 +1,27 @@
+Buenas noches, Gustavo.
+
+Espero que estés bien.
+
+En primera instancia, gracias por el avance de información sobre tu gestión para el tema de las landing pages. Me parece que está cool a nivel de look & feel.
+
+Sin embargo, considero importante suprimir algunos elementos, especialmente el exceso de CTA y enlaces que pueden llevar al usuario a otros sectores de la página o fuera del flujo principal, afectando directamente la tasa de conversión.
+
+El problema con la landing que me mostraste, phbalcony-landing.vercel.app, es que tiene demasiadas salidas para el usuario: tours 360°, descarga de brochure, redes sociales, menú completo, galería extensa, entre otros elementos. Todo esto dispersa la atención y puede disminuir el rendimiento de las campañas pagadas.
+
+Mi recomendación sería priorizar una estructura mucho más enfocada en conversión, colocando un formulario en la parte superior o justo debajo del slider principal, para captar al usuario desde el primer impacto.
+
+Armé un HTML como referencia para que puedas visualizar el orden, los elementos y la información que quisiera mantener en la landing. De igual manera, podemos configurar que, una vez el usuario complete el formulario, sea redirigido a una thank you page o recorrido 360°. Así, únicamente el tráfico que realmente convierte podrá acceder a esa experiencia.
+
+OJO: esto es únicamente un ejemplo estructural. Podemos perfectamente ajustar lo que me mostraste utilizando los elementos de referencia de mi HTML.
+
+Por otro lado, el tema de subir un video definitivamente podría sumar valor a nivel comercial y percepción del proyecto. Sin embargo, primero tendríamos que coordinar y discutir qué elementos debemos tomar en cuenta para esa grabación y así poder planificarla correctamente.
+
+Con respecto al dashboard, con mucho gusto. Me indicas cómo conectamos y gestionamos dicho proceso para integrarlo junto al resto de las mediciones. Me comentas si me enviarás un instructivo o cuál sería el procedimiento a seguir. De igual manera, ya acepté la invitación al mismo.
+
+Referente al material de avance de obra, sí contamos con un video reciente que generamos hoy. Mañana te lo estaremos compartiendo una vez recibamos la aprobación interna, para que puedas agregarlo.
+
+PD: En un correo paralelo reafirmaré la estrategia de marketing planteada en base a todo lo conversado en nuestra reciente reunión, así como también el enfoque estratégico de las landing pages orientadas 100% a conversión. De igual manera, tendremos acciones directas de alcance y tráfico web dirigidas específicamente hacia el recorrido 360°, tema que ampliaré con mayor detalle en el otro correo.
+
+Quedo atento a tus comentarios.
+
+Saludos.
